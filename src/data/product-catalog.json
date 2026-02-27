@@ -1,0 +1,465 @@
+[
+  {
+    "id": "prx-780",
+    "name": "ATX® Power Rack PRX-780",
+    "slug": "atx-power-rack-prx-780",
+    "category": "Power Rack",
+    "brand": "ATX®",
+    "price": 899,
+    "currency": "EUR",
+    "shortDescription": "Premium Power Rack aus 70x70x3 mm Profilstahlrohr für höchste Ansprüche und schwerste Belastungen – inkl. J-Hooks, Flip-Down-Spotter und Multigrip Klimmzugstange.",
+    "detailedDescription": "Das ATX® Power Rack PRX-780 Version 2.0 ist für höchste Ansprüche und schwerste Belastungen konzipiert. Die dickwandige Stahlkonstruktion aus 70x70x3 mm Profilstahlrohren mit extra verstärkten Knotenblechen und 20 mm starken Schraubbolzen garantiert maximale Haltbarkeit. Der gesamte Rahmen ist allseitig mit Systemlochung im Feinraster von 50 mm versehen und ermöglicht die individuelle Anbringung von Hooks, Spottern und Zubehör. Optional erweiterbar mit Latzug (Plate Load oder 125 kg Steckgewichte), Multipresse und Storage Extension.",
+    "specifications": {
+      "Rahmenprofil": "70 x 70 x 3 mm Profilstahlrohr",
+      "Belastbarkeit": "700+ kg",
+      "Systemlochung": "50 mm Feinraster, allseitig",
+      "J-Hooks": "10 mm Vollstahl mit Schutzbelag",
+      "Klimmzugstange": "Multigrip, Ø 27 mm",
+      "Notablagen": "Schwerlast Flip-Down-Spotter mit doppelter Arretierung",
+      "Schraubbolzen": "Ø 20 mm"
+    },
+    "features": [
+      "Schwerlast Flip-Down-Spotter inklusive",
+      "Multigrip Klimmzugstange inklusive",
+      "Allseitige Systemlochung im 50 mm Raster",
+      "Gelaserte Ziffern-Skalierung für schnelles Positionieren",
+      "Optional erweiterbar mit Latzug, Multipresse und Storage Extension",
+      "Verstärkte Knotenbleche für maximale Stabilität",
+      "Band-Pegs für Widerstandsbänder in den Bodenstreben"
+    ],
+    "dimensions": {
+      "width": 127,
+      "height": 227,
+      "depth": 145,
+      "weight": 152
+    },
+    "targetGroup": ["Fortgeschrittene", "Profi-Athleten", "Home Gym Enthusiasten", "Powerlifter"],
+    "compatibleWith": ["mbx-520", "fbx-510", "bulls-bearing-bar", "bumper-plates-150"],
+    "shopifyUrl": "https://motionsports.de/products/atx-power-rack-prx-780",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_prx-780",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/atx-prx-780_01-kamera_0.webp?v=1767740382"
+    ],
+    "inStock": true,
+    "deliveryTime": "3-5 Werktage (Spedition)",
+    "series": "Pro Line",
+    "tags": ["Bestseller", "Home Gym"]
+  },
+  {
+    "id": "prx-510",
+    "name": "ATX® Power Rack PRX-510 mit Flip Down Spotter",
+    "slug": "atx-power-rack-prx-510-mit-flip-down-spotter",
+    "category": "Power Rack",
+    "brand": "ATX®",
+    "price": 449,
+    "currency": "EUR",
+    "shortDescription": "Kompaktes Power Rack mit extra niedriger Bauhöhe von nur 195 cm – ideal für Räume mit niedriger Deckenhöhe. Inkl. J-Hooks, Flip-Down-Spotter und Multi-Grip-Klimmzugstange.",
+    "detailedDescription": "Das ATX® Power Rack PRX-510 ist ein kompaktes und preiswertes Power Rack, perfekt für den Heimbereich. Die extra niedrige Bauhöhe von nur 195 cm passt in fast jeden Raum. Trotz des günstigen Preises ist es bis 500 kg belastbar und aus 50x50x2 mm starkem Profilstahlrohr mit verstärkten Knotenblechen gefertigt. Mit Rundum-Systemlochung und 30-fachen Positionshöhen bietet es umfangreiche Einstellmöglichkeiten. Optional erweiterbar mit Latzug (Plate Load oder Steckgewichte).",
+    "specifications": {
+      "Rahmenprofil": "50 x 50 x 2 mm Profilstahlrohr",
+      "Belastbarkeit": "500 kg",
+      "Bauhöhe": "195 cm (extra niedrig)",
+      "Positionshöhen": "30-fach",
+      "J-Hooks": "10 mm Bandstahl + 10 mm Gummi-Protektoren",
+      "Klimmzugstange": "Multigrip, Ø 27 mm, gerändelt",
+      "Aufnahmebolzen": "Ø 20 mm"
+    },
+    "features": [
+      "Extra niedrige Bauhöhe – nur 195 cm",
+      "Flip-Down-Spotter mit dicker Schutzgummierung",
+      "Multi-Grip-Klimmzugstange inklusive",
+      "Gelaserte Ziffern-Skalierung",
+      "Band-Pegs für Widerstandsbänder",
+      "Schutz-Standfüße, bodenschonend und rutschsicher",
+      "Optional erweiterbar mit Latzug"
+    ],
+    "dimensions": {
+      "width": 108,
+      "height": 195,
+      "depth": 120,
+      "weight": 65
+    },
+    "targetGroup": ["Einsteiger", "Home Gym", "Platzsparend"],
+    "compatibleWith": ["mbx-520", "fbx-510", "bulls-bearing-bar", "bumper-plates-150"],
+    "shopifyUrl": "https://motionsports.de/products/atx-power-rack-prx-510-mit-flip-down-spotter-hohe-195-cm",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_prx-510",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/atx-prx-510-kamera_1.webp?v=1725287441"
+    ],
+    "inStock": true,
+    "deliveryTime": "3-5 Werktage (Spedition)",
+    "series": "Home Line",
+    "tags": ["Preis-Tipp", "Home Gym"]
+  },
+  {
+    "id": "mbx-520",
+    "name": "ATX® Multi Bench Hantelbank MBX-520",
+    "slug": "atx-multi-bench-hantelbank-mbx-520",
+    "category": "Verstellbare Hantelbank",
+    "brand": "ATX®",
+    "price": 349,
+    "currency": "EUR",
+    "shortDescription": "Vielseitige Multibank mit 9-facher Rückenlehnenverstellung und 4-facher Sitzverstellung – belastbar bis 350 kg. Mit Front Tube Adapter für zahlreiche Optionen.",
+    "detailedDescription": "Die ATX® Multi Bench MBX-520 (Modell 2023) ist eine professionelle Hantelbank mit hervorragender Verstellbarkeit. Die 9-fach verstellbare Rückenlehne lässt sich von -10° bis 83° einstellen, die Sitzfläche ist 4-fach verstellbar. Belastbar bis 350 kg bietet sie höchste Stabilität. Der Front Tube Adapter ermöglicht das Anbringen von Optionen wie Beinstrecker/Beuger, Pec-Fly und Bizeps Curl Pult. Mit Transportrollen und Schwenkgriff für einfaches Umpositionieren.",
+    "specifications": {
+      "Belastbarkeit": "350 kg",
+      "Rückenlehne": "9-fach verstellbar (-10° bis 83°)",
+      "Sitzfläche": "4-fach verstellbar",
+      "Polsterabstand Drehgelenk": "40 mm",
+      "Front Tube Adapter": "Ja, für Optionen",
+      "Transportrollen": "Ja, mit Schwenkgriff"
+    },
+    "features": [
+      "9-fache Rückenlehnenverstellung von negativ bis steil",
+      "4-fache Sitzflächenverstellung",
+      "Eng gelagerte Drehachse – kein Wackeln",
+      "Front Tube Adapter für Optionen (Beinstrecker, Pec-Fly, Curl Pult)",
+      "Transportrollen und Schwenkgriff",
+      "Hochwertige Polsterung",
+      "Bodenschonende, rutschsichere Standfüße"
+    ],
+    "dimensions": {
+      "width": 68,
+      "height": 110,
+      "depth": 155,
+      "weight": 38
+    },
+    "targetGroup": ["Einsteiger", "Fortgeschrittene", "Home Gym"],
+    "compatibleWith": ["prx-780", "prx-510", "bulls-bearing-bar", "nuobell-set"],
+    "shopifyUrl": "https://motionsports.de/products/atx-multi-bench-hantelbank-mbx-520",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_mbx-520",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/atx-mbx-520_1_1.webp?v=1759735462"
+    ],
+    "inStock": true,
+    "deliveryTime": "1-3 Werktage (UPS)",
+    "series": "Home Line",
+    "tags": ["Home Gym", "Verstellbare Bank"]
+  },
+  {
+    "id": "fbx-510",
+    "name": "ATX® Flat Bench Compact Flachbank",
+    "slug": "atx-flat-bench-compact-flachbank",
+    "category": "Flachbank",
+    "brand": "ATX®",
+    "price": 159,
+    "currency": "EUR",
+    "shortDescription": "Extra kompakte und dennoch schwer belastbare Flachbank – bis 600 kg belastbar bei nur 17 kg Eigengewicht. Zertifiziert nach EN 20957.",
+    "detailedDescription": "Die ATX® Flat Bench Compact ist eine professionelle Flachbank in kompakter Bauweise. Trotz des geringen Eigengewichts von nur 17 kg ist sie bis 600 kg belastbar – perfekt für schwere Übungen wie Bankdrücken. Die 5,5 cm starke, komfortable Polsterung und die gummierten, rutschsicheren Standfüße bieten höchsten Trainingskomfort. Zwei durchgehende Unterzüge sorgen für maximale Stabilität. Zertifiziert nach EN 20957 I.II.IV Class S.",
+    "specifications": {
+      "Belastbarkeit": "600 kg",
+      "Eigengewicht": "17 kg",
+      "Polsterdicke": "5,5 cm",
+      "Zertifizierung": "EN 20957 I.II.IV Class S",
+      "Unterzüge": "2, durchgehend",
+      "Standfüße": "Gummi-Schutzfüße"
+    },
+    "features": [
+      "Extrem belastbar bis 600 kg",
+      "Nur 17 kg – leicht und schnell umpositionierbar",
+      "5,5 cm komfortable Polsterung",
+      "Gummierte rutschsichere Standfüße",
+      "Zertifiziert nach EN 20957",
+      "Kompakte Bauweise für kleine Räume"
+    ],
+    "dimensions": {
+      "width": 52,
+      "height": 44,
+      "depth": 110,
+      "weight": 17
+    },
+    "targetGroup": ["Einsteiger", "Fortgeschrittene", "Home Gym", "Platzsparend"],
+    "compatibleWith": ["prx-780", "prx-510", "bulls-bearing-bar", "nuobell-set"],
+    "shopifyUrl": "https://motionsports.de/products/atx-flat-bench-compact-flachbank",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_fbx-510",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/1-128.jpg?v=1719224353"
+    ],
+    "inStock": true,
+    "deliveryTime": "1-3 Werktage (DPD)",
+    "series": "Home Line",
+    "tags": ["Preis-Tipp"]
+  },
+  {
+    "id": "bulls-bearing-bar",
+    "name": "ATX® Bulls Bearing Bar-MK +700 kg",
+    "slug": "atx-bulls-bearing-bar-mk",
+    "category": "Langhantelstange",
+    "brand": "ATX®",
+    "price": 299,
+    "currency": "EUR",
+    "shortDescription": "Premium Hybrid-Langhantelstange aus Federstahl mit Nadellagerung – belastbar bis 700+ kg. Für Gewichtheben, Powerlifting und Krafttraining.",
+    "detailedDescription": "Die ATX® Bulls Bearing Bar ist eine aus hochwertig legiertem Spezialstahl/Federstahl gefertigte Langhantelstange im High-End-Finish. Die Stange hat eine extrem hohe Zug- und Druckfestigkeit bei gleichzeitiger Elastizität dank optimaler Legierung aus Chrom, Molybdän, Silizium und Mangan. Die abriebfeste Hartverchromung und extra griffige Präzisionsrändelung mit 2-facher Griffweitenmarkierung machen sie zur idealen Allround-Hantelstange. Die nadelgelagerten Aufnahmen ermöglichen butterweiche Rotation.",
+    "specifications": {
+      "Material": "Spezialstahl/Federstahl nach EN 102775-5",
+      "Zugfestigkeit": "206.000 psi (206K)",
+      "Belastbarkeit": "700+ kg",
+      "Gesamtlänge": "2200 mm",
+      "Griff-Innenmaß": "1310 mm",
+      "Griffdurchmesser": "28 mm",
+      "Gewicht": "20 kg",
+      "Aufnahmen": "Ø 50 mm mit Nadellagerung",
+      "Oberfläche": "Hartverchromt"
+    },
+    "features": [
+      "Federstahl mit elastischer Rückstellung",
+      "Nadellagerung für butterweiche Rotation",
+      "Abriebfeste Hartverchromung",
+      "Extra griffige Präzisionsrändelung",
+      "2-fache Griffweitenmarkierung (Powerlifting + Weightlifting)",
+      "Für Ø 50 mm Hantelscheiben"
+    ],
+    "dimensions": {
+      "width": 5.6,
+      "height": 5.6,
+      "depth": 220,
+      "weight": 20
+    },
+    "targetGroup": ["Fortgeschrittene", "Profi-Athleten", "Powerlifter", "Gewichtheber"],
+    "compatibleWith": ["prx-780", "prx-510", "bumper-plates-150"],
+    "shopifyUrl": "https://motionsports.de/products/atx-bulls-bearing-bar-mk-700-kg-federstahl-gelagert",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_bulls-bearing-bar",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/1-40.jpg?v=1715871454"
+    ],
+    "inStock": true,
+    "deliveryTime": "1-3 Werktage (UPS)",
+    "series": "Pro Line",
+    "tags": ["Bestseller"]
+  },
+  {
+    "id": "nuobell-set",
+    "name": "ATX® Nüobell 2-32 kg + Hantelständer",
+    "slug": "atx-nuobell-2-32-kg-hantelstaender",
+    "category": "Kurzhanteln verstellbar",
+    "brand": "ATX® / Nüobell®",
+    "price": 879,
+    "salePrice": 669,
+    "currency": "EUR",
+    "shortDescription": "Verstellbare Kompakthanteln 2-32 kg mit patentiertem Klick-Mechanismus und elegantem Hantelständer – ersetzt einen ganzen Hantelsatz im Home Gym.",
+    "detailedDescription": "Die Nüobell® Kompakthanteln vereinen Hantelgewichte von 2 bis 32 kg in einem extrem schnell wechselbaren System. Der patentierte Klick-Mechanismus ermöglicht die Gewichtsänderung mit einer leichten Drehung der griffig gerändelten Hantelstange. Aufgenommen sperrt der Mechanismus die Drehfunktion und schützt vor unbeabsichtigter Verstellung. Das schlanke Design ermöglicht ein umfassendes Übungsspektrum. Im Set inklusive stabilem Metallrahmen-Hantelständer.",
+    "specifications": {
+      "Gewichtsbereich": "2 - 32 kg pro Hantel",
+      "Verstellsystem": "Patentierter Klick-Mechanismus",
+      "Hantelständer": "Metallrahmen, H 560 mm x B 740 mm x T 560 mm",
+      "Gewichtsstufen": "In 2 kg Schritten",
+      "Oberfläche": "Griffig gerändelte Hantelstange",
+      "Varianten": "2-20 kg / 2-32 kg / 5-80 lb"
+    },
+    "features": [
+      "Patentierter Klick-Mechanismus für sekundenschnellen Gewichtswechsel",
+      "Ersetzt einen kompletten Hantelsatz",
+      "Kompaktes, schlankes Design",
+      "Gesperrt beim Training – kein versehentliches Verstellen",
+      "Eleganter Metallrahmen-Hantelständer inklusive",
+      "Ideal für Home Gym, Hotel, Personal Training"
+    ],
+    "dimensions": {
+      "width": 74,
+      "height": 76,
+      "depth": 56,
+      "weight": 70
+    },
+    "targetGroup": ["Einsteiger", "Fortgeschrittene", "Home Gym", "Platzsparend"],
+    "compatibleWith": ["mbx-520", "fbx-510"],
+    "shopifyUrl": "https://motionsports.de/products/atx-nuobell-2-20-32-36-kg-hantelstander",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_nuobell-set",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/flex-stand_03_2.jpg?v=1715864757"
+    ],
+    "inStock": true,
+    "deliveryTime": "3-5 Werktage (Spedition)",
+    "series": "Home Line",
+    "tags": ["Bestseller", "Home Gym", "Sale"]
+  },
+  {
+    "id": "omega-z",
+    "name": "Horizon Fitness Omega Z Laufband",
+    "slug": "horizon-fitness-omega-z-laufband",
+    "category": "Laufband",
+    "brand": "Horizon Fitness",
+    "price": 1699,
+    "salePrice": 1449,
+    "currency": "EUR",
+    "shortDescription": "Klappbares Premium-Laufband mit 3,0 PS Motor, extragroßer 53x140 cm Lauffläche und Sprint 8 HIIT-Programm. Elegante Dark Edition für moderne Wohnräume.",
+    "detailedDescription": "Das Horizon Fitness Omega Z Laufband definiert Heimtraining neu. Mit seinem leistungsstarken 3,0 PS Motor erreicht es Geschwindigkeiten bis 20 km/h. Die extragroße Lauffläche (53 x 140 cm) bietet höchste Laufsicherheit auch bei intensiven Einheiten. Die exklusive PulseTrain Technologie gibt per farbigem LED-Feedback Rückmeldung zur Herzfrequenzzone. Das vorinstallierte Sprint 8 HIIT-Programm sorgt für hocheffektive Einheiten. Dank FeatherLight Folding lässt es sich mühelos zusammenklappen und platzsparend verstauen. Bluetooth FTMS App-kompatibel.",
+    "specifications": {
+      "Motor": "3,0 PS",
+      "Geschwindigkeit": "Bis 20 km/h",
+      "Lauffläche": "53 x 140 cm",
+      "Steigung": "0-12%",
+      "Programme": "Sprint 8 HIIT + weitere vorinstallierte Programme",
+      "Display": "LED-Konsole mit PulseTrain Farbfeedback",
+      "Konnektivität": "Bluetooth FTMS, App-kompatibel",
+      "Klappsystem": "FeatherLight Folding"
+    },
+    "features": [
+      "3,0 PS Motor für Geschwindigkeiten bis 20 km/h",
+      "Extragroße Lauffläche 53 x 140 cm",
+      "PulseTrain Technologie mit LED-Farbfeedback",
+      "Sprint 8 HIIT-Programm vorinstalliert",
+      "FeatherLight Folding – mühelos zusammenklappbar",
+      "Bluetooth FTMS App-Kompatibilität",
+      "Elegante Dark Edition"
+    ],
+    "dimensions": {
+      "width": 82,
+      "height": 142,
+      "depth": 181,
+      "weight": 90
+    },
+    "targetGroup": ["Einsteiger", "Fortgeschrittene", "Cardio-Fans", "Home Gym"],
+    "compatibleWith": [],
+    "shopifyUrl": "https://motionsports.de/products/horizon-fitness-omega-z-laufband",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_omega-z",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/HorizonFitnessOmegaZLaufband.webp?v=1762877615"
+    ],
+    "inStock": true,
+    "deliveryTime": "5-7 Werktage (Spedition)",
+    "series": "Home Line",
+    "tags": ["Sale", "Cardio"]
+  },
+  {
+    "id": "ccs-800",
+    "name": "ATX® Cable Crossover Kabelzugstation",
+    "slug": "atx-cable-crossover-kabelzugstation",
+    "category": "Kabelzug-Station",
+    "brand": "ATX®",
+    "price": 3799,
+    "currency": "EUR",
+    "shortDescription": "Professionelle Kabelzug-Station mit 2 x 90 kg Gewichtsstapel, 37-fach verstellbaren Lenkrollen und erstklassiger Leichtlaufeigenschaft.",
+    "detailedDescription": "Die ATX® Cable Crossover Kabelzugstation begeistert durch hervorragende Laufeigenschaften und erstklassige Verarbeitungsqualität. Die in der Höhe 37-fach einstellbaren Lenkrolleneinheiten lassen sich leichtgängig mit nur einer Hand verstellen. Das großzügige Abmaß gewährt viel Bewegungsfreiheit und optimale Vorspannung. Die 2 x 90 kg Gewichtsstapel mit direkter Kraftübertragung (Übersetzung 2:1) ermöglichen auch starken Athleten schwere Belastungen. Optional erweiterbar mit Klimmzugstange an der Querstrebe.",
+    "specifications": {
+      "Gewichtsstapel": "2 x 90 kg (5 kg Stahlplatten)",
+      "Übersetzung": "2:1",
+      "Lenkrollen": "37-fach verstellbar im 5 cm Raster",
+      "Schwenkbereich Rollen": "170° für schräge Zugwinkel",
+      "Führungsstangen": "Hartverchromt, Vollmaterial",
+      "Seilrollen": "Aluminium mit Kugellagerung",
+      "Stahlseile": "Hochflexibel mit Kunststoffummantelung",
+      "Bedienung": "Einhandbedienung"
+    },
+    "features": [
+      "2 x 90 kg Gewichtsstapel für schwere Belastungen",
+      "37-fach höhenverstellbar mit Einhandbedienung",
+      "170° Schwenkbereich für vielfältige Zugwinkel",
+      "Aluminium-Seilrollen mit Kugellagerung",
+      "Gravierte Skalierung für reproduzierbare Einstellungen",
+      "Optional mit Klimmzugstange erweiterbar",
+      "Professionelle Studio-Qualität"
+    ],
+    "dimensions": {
+      "width": 150,
+      "height": 230,
+      "depth": 100,
+      "weight": 290
+    },
+    "targetGroup": ["Profi-Athleten", "Studio-Betreiber", "Fortgeschrittene", "Home Gym Premium"],
+    "compatibleWith": [],
+    "shopifyUrl": "https://motionsports.de/products/atx-cable-crossover-kabelzugstation",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_ccs-800",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/atx-ccs-800_01_startbild-1.jpg?v=1715864154"
+    ],
+    "inStock": true,
+    "deliveryTime": "5-10 Werktage (Spedition, frei Bordsteinkante)",
+    "series": "Studio Line",
+    "tags": ["Premium", "Studio"]
+  },
+  {
+    "id": "rowerg",
+    "name": "Concept2 RowErg Rudergerät",
+    "slug": "concept2-rowerg-rudergerat",
+    "category": "Rudergerät",
+    "brand": "Concept2",
+    "price": 1195,
+    "currency": "EUR",
+    "shortDescription": "Der Gold-Standard für Indoor-Rudern – genutzt von Olympia-Athleten weltweit. Effektives Ganzkörper- und Herz-Kreislauf-Training mit PM5-Monitor.",
+    "detailedDescription": "Das Concept2 RowErg ist im Rudersport seit Langem als Standard für Indoor-Training anerkannt. Die Rudermaschine liefert ein effektives Herz-Kreislauf-Training, das alle wichtigen Muskelgruppen anspricht. Es ist das gleiche Gerät, das Olympia- und Elite-Athleten zum Training verwenden. Der leistungsstarke PM5 Performance-Monitor lässt sich mit einer Vielzahl von Apps verbinden und wird mit Smartphone-/Tablethalterung geliefert. Das RowErg lässt sich einfach in zwei Teile zerlegen und platzsparend aufbewahren.",
+    "specifications": {
+      "Gesamtlänge": "244 cm",
+      "Breite": "61 cm",
+      "Sitzhöhe": "36 cm (Standard) / 51 cm (hohe Beine)",
+      "Rollschienenlänge": "137 cm",
+      "Gewicht": "26 kg (Standardbeine) / 31 kg (hohe Beine)",
+      "Monitor": "PM5 Performance Monitor",
+      "Rahmenmaterial": "Edelstahl",
+      "Widerstandssystem": "Luft (stufenlos)"
+    },
+    "features": [
+      "PM5 Monitor mit Bluetooth und ANT+",
+      "Smartphone-/Tablethalterung inklusive",
+      "Zerlegbar in zwei Teile zur Aufbewahrung",
+      "Stufenloser Luftwiderstand",
+      "Kompatibel mit zahlreichen Fitness-Apps",
+      "Ganzkörpertraining – 86% der Muskulatur",
+      "Weltweit anerkannter Trainingsstandard"
+    ],
+    "dimensions": {
+      "width": 61,
+      "height": 36,
+      "depth": 244,
+      "weight": 26
+    },
+    "targetGroup": ["Einsteiger", "Fortgeschrittene", "Cardio-Fans", "Ganzkörpertraining"],
+    "compatibleWith": [],
+    "shopifyUrl": "https://motionsports.de/products/concept2-rowerg-rudergerat",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_rowerg",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/model-d-indoor-rower-with-pm5-1.jpg?v=1715856928"
+    ],
+    "inStock": true,
+    "deliveryTime": "1-3 Werktage (UPS)",
+    "series": "Pro Line",
+    "tags": ["Premium", "Cardio", "Ganzkörpertraining"]
+  },
+  {
+    "id": "bumper-plates-150",
+    "name": "ATX® Color Full Rubber Bumper Plates – 150 kg Set",
+    "slug": "atx-color-full-rubber-bumper-plates-150kg",
+    "category": "Hantelscheiben-Set",
+    "brand": "ATX®",
+    "price": 636,
+    "salePrice": 599,
+    "currency": "EUR",
+    "shortDescription": "150 kg Vorteilspaket Vollgummi-Bumper-Plates im internationalen Farbcode – REACH-zertifiziert, getestet mit über 20.000 Drops.",
+    "detailedDescription": "Die ATX® Color Full Rubber Bumper Plates sind für Powerlifting, Gewichtheben und Functional Fitness geeignet. Die erstklassige Gummiqualität bietet hervorragende Aufprall-/Absorptionseigenschaften. Der gebördelte Edelstahl-Innenring (Easy Pick-up) gewährt schnelles und sicheres Handling. Das Set enthält: 2x25 kg, 2x20 kg, 2x15 kg, 2x10 kg, 2x5 kg = 150 kg gesamt. REACH-zertifiziert, farbbeständig und geruchsarm. Getestet mit über 20.000 Drops mit 3 Jahren Langzeitgarantie.",
+    "specifications": {
+      "Gesamtgewicht": "150 kg",
+      "Zusammensetzung": "2x25kg + 2x20kg + 2x15kg + 2x10kg + 2x5kg",
+      "Durchmesser": "450 mm",
+      "Innenring": "Ø 50,8 mm, Edelstahl, gebördelt",
+      "Gewichtstoleranz": "+/- 1%",
+      "Härte": "Shore A 90",
+      "Zertifizierung": "REACH-zertifiziert",
+      "Haltbarkeit": "Getestet 20.000+ Drops"
+    },
+    "features": [
+      "Internationaler Farbcode (Rot, Blau, Gelb, Grün, Schwarz)",
+      "Erstklassige Vollgummi-Qualität",
+      "REACH-zertifiziert, geruchsarm und farbbeständig",
+      "Edelstahl-Innenring mit Easy Pick-up",
+      "Vulkanisierte kg-Angabe und ATX®-Logo",
+      "Getestet mit über 20.000 Drops",
+      "3 Jahre Langzeitgarantie"
+    ],
+    "dimensions": {
+      "width": 45,
+      "height": 45,
+      "depth": 20,
+      "weight": 150
+    },
+    "targetGroup": ["Einsteiger", "Fortgeschrittene", "Profi-Athleten", "Powerlifter", "Gewichtheber"],
+    "compatibleWith": ["bulls-bearing-bar", "prx-780", "prx-510"],
+    "shopifyUrl": "https://motionsports.de/products/vorteilspaket-150-kg-atx-color-full-rubber-bumper-plates",
+    "shopifyCartUrl": "https://motionsports.de/cart/add?id=PLACEHOLDER_bumper-plates-150",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0823/4896/6217/files/50-atx-crp-u_bersicht-2.jpg?v=1715862975"
+    ],
+    "inStock": true,
+    "deliveryTime": "3-5 Werktage (Spedition)",
+    "series": "Pro Line",
+    "tags": ["Sale", "Vorteilspaket"]
+  }
+]

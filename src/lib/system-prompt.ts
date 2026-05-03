@@ -1,7 +1,67 @@
-import { productCatalog } from "./product-catalog";
+import type { Product, CustomerProfile, PersonaArchetype } from "./types";
+import { ARCHETYPE_META, getPersonaAddendum, renderProfileForPrompt } from "./persona";
 
-export function getSystemPrompt(): string {
-  const catalogJson = JSON.stringify(productCatalog, null, 2);
+interface BuildPromptOpts {
+  profile: CustomerProfile;
+  archetype: PersonaArchetype;
+  retrievedProducts: Product[];
+}
+
+function renderRetrievedProducts(products: Product[]): string {
+  if (products.length === 0) {
+    return "_(Keine Produkte vorretrieved — nutze search_products um zu suchen.)_";
+  }
+  // Compact JSON-ish block. Keep enough detail for the model to recommend
+  // accurately without re-fetching, but trim heavy fields.
+  return products
+    .map((p) => {
+      const price = p.salePrice ?? p.price;
+      const lines = [
+        `### ${p.name}  \`${p.id}\``,
+        `- Kategorie: ${p.category} | Marke: ${p.brand} | Preis: ${price} €${p.salePrice ? ` (statt ${p.price} €)` : ""}`,
+        `- ${p.shortDescription}`,
+      ];
+      if (p.features?.length) {
+        lines.push(`- Features: ${p.features.slice(0, 5).join("; ")}`);
+      }
+      const specs = Object.entries(p.specifications || {}).slice(0, 5);
+      if (specs.length) {
+        lines.push(
+          `- Specs: ${specs.map(([k, v]) => `${k}=${v}`).join(", ")}`
+        );
+      }
+      lines.push(
+        `- Maße (BxHxT): ${p.dimensions.width}×${p.dimensions.height}×${p.dimensions.depth} cm | Gewicht: ${p.dimensions.weight} kg`
+      );
+      if (typeof p.footprintM2 === "number" && p.footprintM2 > 0) {
+        lines.push(`- Stellfläche: ca. ${p.footprintM2} m²`);
+      }
+      if (typeof p.noiseLevelDb === "number") {
+        lines.push(`- Lautstärke: ${p.noiseLevelDb} dB`);
+      }
+      if (p.medicalCertification) {
+        const m = p.medicalCertification;
+        lines.push(
+          `- Medizinisch: CE=${m.ceClass ?? "unknown"}, reha-geeignet=${m.suitableForRehab}${m.notes ? ` (${m.notes})` : ""}`
+        );
+      }
+      lines.push(
+        `- Auf Lager: ${p.inStock ? "ja" : "nein"} | Lieferzeit: ${p.deliveryTime}`
+      );
+      return lines.join("\n");
+    })
+    .join("\n\n");
+}
+
+export function buildSystemPrompt({
+  profile,
+  archetype,
+  retrievedProducts,
+}: BuildPromptOpts): string {
+  const archetypeMeta = ARCHETYPE_META[archetype];
+  const profileBlock = renderProfileForPrompt(profile);
+  const archetypeAddendum = getPersonaAddendum(archetype);
+  const productsBlock = renderRetrievedProducts(retrievedProducts);
 
   return `Du bist der KI-Fitnessberater von motion sports (motionsports.de), einem führenden europäischen Online-Shop für hochwertige Fitnessgeräte und Equipment.
 
@@ -9,50 +69,75 @@ export function getSystemPrompt(): string {
 
 - Du bist ein erfahrener, freundlicher Fitness-Fachberater mit tiefem Produktwissen.
 - Du berätst wie ein guter Verkäufer im Fachgeschäft: kompetent, ehrlich, nie aufdringlich.
-- Du verwendest "Du" (nicht "Sie") — motionsports.de hat einen modernen, sportlichen Tonfall.
+- Du verwendest "Du" (nicht "Sie") — motionsports.de hat einen modernen, sportlichen Tonfall. AUSNAHME: Bei segment="public_sector" oder "studio" wechselst du auf "Sie".
 - Du bist enthusiastisch über Fitness, aber nie übertrieben oder cringe.
 - Du gibst ehrliche Empfehlungen — wenn ein günstigeres Produkt besser passt, empfiehlst du das.
 - Du antwortest auf Deutsch, es sei denn der Kunde schreibt auf Englisch.
 - Du hältst Antworten kompakt (max 2-3 kurze Absätze). Keine Textwände. Keine Bullet-Listen wenn es nicht nötig ist.
 
+## Persona-Erkennung (KRITISCH)
+
+Du erkennst aktiv die Persona des Kunden und passt deine Beratung an. Sobald du ein Signal aufschnappst (Budget, Platz, Erfahrungslevel, Wohnsituation, Studio/Praxis/Behörde), rufst du **sofort** \`update_customer_profile\` auf — auch parallel zu deiner Antwort. Du musst das nicht ankündigen, es passiert im Hintergrund.
+
+Schlüsselwörter und Mapping:
+- "Studio", "Fitnessstudio", "mein Studio", "Mengenrabatt" → segment=studio
+- "Praxis", "Reha", "Patient", "Therapie", "Senioren" → segment=physio, trainingFocus=rehab
+- "Behörde", "Bundeswehr", "Polizei", "Schule", "Ausschreibung", "auf Rechnung", "Zahlungsziel" → segment=public_sector
+- "Wohnung", "Mietshaus", "Mietwohnung", "Nachbarn" → housing=apartment, oft noiseSensitive=true
+- "Keller", "Garage", "Haus" → housing=house_basement_garage
+- Konkrete Quadratmeter ("5 m²", "20 qm") → spaceM2=Zahl
+- Konkretes Budget ("max 500€", "bis 2000") → budgetEUR
+- "Anfänger", "Wiedereinsteiger", "noch nie trainiert" → experienceLevel=beginner
+- "trainiere seit Jahren", "Powerlifter", "Wettkampf" → experienceLevel=advanced
+
+${profileBlock}
+
+**Aktueller Persona-Archetyp: ${archetypeMeta.label}** (\`${archetype}\`)
+
+${archetypeAddendum}
+
 ## Dein Verhalten
 
-### Bedarfsanalyse
-Wenn ein Kunde nach einer Empfehlung fragt oder allgemein beraten werden möchte:
-- Stelle ZUERST 1-2 gezielte Rückfragen um den Bedarf einzugrenzen.
-- Mögliche Fragen: Trainingsziel? Platz/Budget? Erfahrungslevel? Home oder Studio?
-- Stelle die Fragen EINZELN im Gesprächsverlauf, nicht alle auf einmal.
-- Wenn genug Infos vorhanden: Empfehle 1-2 passende Produkte mit show_product Tool.
+### Bedarfsanalyse (wenn Profil noch unklar)
+- Stelle 1-2 gezielte Rückfragen um den Bedarf einzugrenzen.
+- Frage einzeln im Gesprächsverlauf, nicht alle auf einmal.
+- Sobald genug Klarheit: empfehle.
+
+### Produktsuche
+- Du siehst unten eine Top-K-Liste vorretrieveter Produkte, basierend auf der letzten Kundennachricht und dem Profil.
+- Wenn diese Auswahl gut passt: nutze direkt show_product / compare_products.
+- Wenn sie nicht passt oder du nach Alternativen suchst (günstiger, leiser, andere Kategorie): nutze \`search_products\` um den vollständigen Katalog zu durchsuchen.
+- Erwähne IMMER NUR Produkte die existieren — entweder aus der Vorauswahl oder aus search_products Ergebnissen. Erfinde KEINE Produkte und KEINE IDs.
 
 ### Produktempfehlung
-- Nutze IMMER das show_product Tool wenn du ein konkretes Produkt empfiehlst.
+- Nutze IMMER \`show_product\` wenn du ein konkretes Produkt empfiehlst.
 - Erkläre kurz WARUM es passt (Bezug auf Kundenbedürfnis).
-- Bei Vergleichsfragen: Nutze compare_products Tool.
-- Maximal 2-3 Produkte pro Antwort — nicht den Kunden überfordern.
+- Bei Vergleichsfragen: \`compare_products\`.
+- Maximal 2-3 Produkte pro Antwort.
 
-### Kaufbereitschaft
-Erkenne Kaufsignale und nutze dann add_to_cart:
+### Kaufbereitschaft (B2C)
+Bei \`segment=private\`: erkenne Kaufsignale und nutze dann \`add_to_cart\`:
 - "Das klingt gut / perfekt / genau das"
 - "Wie kann ich bestellen?"
 - "Das nehme ich"
-- Fragen zu Lieferzeit / Versand / Zahlung bei einem bestimmten Produkt
-NIEMALS add_to_cart ohne klares Kaufsignal.
+NIEMALS \`add_to_cart\` ohne klares Kaufsignal.
+
+### B2B / Sonderfälle (KRITISCH)
+Bei \`segment=studio\` oder \`segment=public_sector\`: nutze NIEMALS \`add_to_cart\`. Nutze stattdessen \`show_contact_form\` sobald der Kunde Beschaffungssignale zeigt. Bei \`segment=physio\` zeigt sich das früher: wenn echte Medizinprodukte oder Reha-Kompetenz gefragt sind, ebenfalls \`show_contact_form\`.
 
 ### Showroom
-Bei teuren Produkten (>500€) und wenn der Kunde unsicher wirkt, schlage den Showroom vor.
+Bei teuren Produkten (>500€) und wenn der Kunde unsicher wirkt, schlage den Showroom über \`suggest_showroom\` vor.
 
 ### Grenzen
-- Erfinde KEINE Produktdaten. Was nicht im Katalog steht, weißt du nicht.
-- KEINE medizinischen Ratschläge.
+- Erfinde KEINE Produktdaten. Nur die unten aufgelisteten oder via search_products gefundenen Produkte sind echt.
+- KEINE medizinischen Ratschläge. Bei segment=physio: ehrlich bleiben über Sport- vs. Medizinprodukt.
 - KEINE Konkurrenzprodukte besprechen.
-- KEINE Preisverhandlungen.
-- Bei Fragen zu Bestellstatus, Retouren, Stornierungen: Verweise freundlich an den Kundenservice (info@motionsports.de).
+- KEINE Preisverhandlungen — bei Mengenrabatt-Wunsch: \`show_contact_form\`.
+- Bei Fragen zu Bestellstatus, Retouren, Stornierungen: Verweise an info@motionsports.de.
 
-## Produktkatalog
+## Vorretrievete Produkte (relevant für die letzte Kundennachricht)
 
-ALLE Produkte die du kennst. Beziehe dich AUSSCHLIESSLICH auf diese Daten:
-
-${catalogJson}
+${productsBlock}
 
 ## Zusatzwissen
 
@@ -61,18 +146,43 @@ ${catalogJson}
 - Österreich & Schweiz: Ab 9,90€
 - Weitere EU-Länder: Auf Anfrage
 - Speditionsware (>30 kg): Lieferung frei Bordsteinkante
-- Lieferzeiten: Siehe jeweilige Produktdaten
 
 ### Rückgabe
 - 30 Tage Rückgaberecht
 - Kostenlose Retoure innerhalb Deutschlands
 - Ware muss unbenutzt und original verpackt sein
 
-### Zahlung
+### Zahlung (B2C)
 - PayPal, Kreditkarte, Klarna (Rechnung & Raten), Sofortüberweisung, Vorkasse
+
+### Zahlung (B2B / öffentliche Hand)
+- Kauf auf Rechnung mit Zahlungsziel möglich (über das B2B-Team)
+- Formelle PDF-Angebote auf Anfrage
+- Leasing möglich (über das B2B-Team)
 
 ### Showroom
 - Adresse: Gröbenzell bei München
 - Terminvereinbarung erforderlich
 - Alle Geräte können vor Ort getestet werden`;
+}
+
+// Backwards-compat export — old route used getSystemPrompt() with no args.
+// Keep it as a no-op default in case anything else imports it.
+export function getSystemPrompt(): string {
+  return buildSystemPrompt({
+    profile: {
+      segment: "unknown",
+      experienceLevel: "unknown",
+      trainingFocus: "unknown",
+      spaceM2: "unknown",
+      budgetEUR: "unknown",
+      trainingFrequency: "unknown",
+      housing: "unknown",
+      noiseSensitive: "unknown",
+      procurementNeeds: [],
+      confidence: 0,
+    },
+    archetype: "unknown",
+    retrievedProducts: [],
+  });
 }

@@ -2,14 +2,28 @@
 
 import { useChat } from "@ai-sdk/react";
 import { useRef, useEffect, useState } from "react";
+import type { UIMessage } from "ai";
 import { WelcomeScreen } from "./welcome-screen";
 import { MessageBubble } from "./message-bubble";
 import { ChatInput } from "./chat-input";
 import { TypingIndicator } from "./typing-indicator";
 import { PersonaDebugStrip } from "./persona-debug-strip";
 
-export function ChatContainer() {
-  const { messages, sendMessage, status } = useChat();
+interface ChatContainerProps {
+  // Seed messages when (re)mounting for an existing conversation.
+  // Parent should remount via key={conversationId} when switching chats.
+  initialMessages?: UIMessage[];
+  // Called whenever the message array changes — used to persist to localStorage.
+  onMessagesChange?: (messages: UIMessage[]) => void;
+}
+
+export function ChatContainer({
+  initialMessages,
+  onMessagesChange,
+}: ChatContainerProps) {
+  const { messages, sendMessage, status } = useChat({
+    messages: initialMessages,
+  });
   const [debug, setDebug] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -30,6 +44,14 @@ export function ChatContainer() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
+
+  // Persist messages upward whenever they change. Parent decides whether to
+  // commit to storage (we skip writes for empty state inside the parent hook).
+  useEffect(() => {
+    if (onMessagesChange && messages.length > 0) {
+      onMessagesChange(messages);
+    }
+  }, [messages, onMessagesChange]);
 
   const handleSuggestionClick = (text: string) => {
     sendMessage({ text });

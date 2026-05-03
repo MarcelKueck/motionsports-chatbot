@@ -63,7 +63,7 @@ export async function POST(req: Request) {
   const latestUserText = getLatestUserText(messages);
 
   const hits = latestUserText
-    ? await retrieveForTurn({ latestUserMessage: latestUserText, profile, limit: 6 })
+    ? await retrieveForTurn({ latestUserMessage: latestUserText, profile, limit: 8 })
     : [];
   const retrievedProducts = hits.map((h) => h.product);
 
@@ -72,7 +72,7 @@ export async function POST(req: Request) {
     system: buildSystemPrompt({ profile, archetype, retrievedProducts }),
     messages: await convertToModelMessages(messages),
     tools: buildChatTools(profile),
-    stopWhen: stepCountIs(4),
+    stopWhen: stepCountIs(6),
   });
 
   return result.toUIMessageStreamResponse();

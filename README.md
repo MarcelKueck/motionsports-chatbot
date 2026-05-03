@@ -20,15 +20,22 @@ ANTHROPIC_API_KEY=sk-ant-...
 OPENAI_API_KEY=sk-...     # nur für den Indexer benötigt; der Chat funktioniert auch ohne
 ```
 
-## Embeddings indexieren
+## Katalog aktualisieren
 
-Die Embeddings werden einmalig mit dem Indexer-Skript erzeugt und committed (statisches JSON, ~6 MB für 1000 Produkte). Skript erneut ausführen wenn der Katalog geändert wurde.
+Der Produktkatalog wird aus einem Shopify-CSV-Export generiert. Workflow wenn sich der Shop-Katalog ändert:
 
 ```bash
-npm run index
+# 1. Shopify CSV-Export nach src/data/products_export_1.csv legen
+# 2. JSON-Katalog regenerieren
+npm run convert-catalog
+# 3. Embeddings neu indexieren
+OPENAI_API_KEY=sk-... npm run index
+# 4. Beide Dateien committen + pushen → Vercel deployt automatisch
 ```
 
-Output: `src/data/product-embeddings.json`. Solange diese Datei keine Vektoren enthält, fällt das System automatisch auf Keyword-Suche zurück.
+Filter-Regeln in `convert-catalog`: nur Produkte mit `Published=TRUE`, Preis > 0, mindestens einem Bild und `Status=active`. Persona-relevante Felder (`medicalCertification`, `noiseLevelDb`, `footprintM2`) sind im Shopify-Export nicht durchgängig vorhanden und stehen auf `"unknown"` — bei Bedarf für die wichtigsten Produkte hand-kuratieren.
+
+Solange `product-embeddings.json` keine Vektoren enthält, fällt das Retrieval auf Keyword-Suche zurück.
 
 ## Lokal starten
 

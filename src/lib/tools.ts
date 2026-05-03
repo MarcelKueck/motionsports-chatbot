@@ -78,6 +78,7 @@ Wichtige Trigger-Wörter:
 
 Setze nur Felder die das aktuelle Signal tatsächlich klärt. Bestehende Felder werden gemerged. Aktuelles Profil ist im System-Prompt sichtbar.`,
       inputSchema: profilePatchSchema,
+      execute: async () => ({ ok: true }),
     }),
 
     search_products: tool({
@@ -143,6 +144,7 @@ Gib das Ergebnis NICHT roh aus — nutze es um dann show_product oder compare_pr
           .optional()
           .describe("Kurze Begründung warum dieses Produkt passt (1-2 Sätze)"),
       }),
+      execute: async () => ({ ok: true }),
     }),
 
     compare_products: tool({
@@ -161,6 +163,7 @@ Gib das Ergebnis NICHT roh aus — nutze es um dann show_product oder compare_pr
             "Kontext des Vergleichs z.B. 'Preis-Leistung für Einsteiger'"
           ),
       }),
+      execute: async () => ({ ok: true }),
     }),
 
     add_to_cart: tool({
@@ -172,6 +175,7 @@ Gib das Ergebnis NICHT roh aus — nutze es um dann show_product oder compare_pr
           .string()
           .describe("Positive Bestätigungsnachricht, z.B. 'Super Wahl!'"),
       }),
+      execute: async () => ({ ok: true }),
     }),
 
     suggest_showroom: tool({
@@ -182,6 +186,7 @@ Gib das Ergebnis NICHT roh aus — nutze es um dann show_product oder compare_pr
           .array(z.string())
           .describe("Produkte die im Showroom getestet werden können"),
       }),
+      execute: async () => ({ ok: true }),
     }),
 
     show_contact_form: tool({
@@ -217,6 +222,7 @@ Nutze die treffendste reason. Die Nachricht sollte erklären WARUM persönliche 
             "Produkte die im Gespräch relevant sind, werden im Formular vorausgefüllt."
           ),
       }),
+      execute: async () => ({ ok: true }),
     }),
   };
 }

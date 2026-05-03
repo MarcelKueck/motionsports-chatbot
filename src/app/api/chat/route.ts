@@ -6,7 +6,7 @@ import { deriveArchetype } from "@/lib/persona";
 import { retrieveForTurn } from "@/lib/retrieval";
 import { EMPTY_PROFILE, type CustomerProfile, type UpdateCustomerProfileArgs } from "@/lib/types";
 
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 function mergeProfile(prev: CustomerProfile, patch: UpdateCustomerProfileArgs): CustomerProfile {
   // Merge a profile patch onto the previous profile. Empty/undefined fields
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
   const latestUserText = getLatestUserText(messages);
 
   const hits = latestUserText
-    ? await retrieveForTurn({ latestUserMessage: latestUserText, profile, limit: 8 })
+    ? await retrieveForTurn({ latestUserMessage: latestUserText, profile, limit: 6 })
     : [];
   const retrievedProducts = hits.map((h) => h.product);
 
@@ -72,7 +72,7 @@ export async function POST(req: Request) {
     system: buildSystemPrompt({ profile, archetype, retrievedProducts }),
     messages: await convertToModelMessages(messages),
     tools: buildChatTools(profile),
-    stopWhen: stepCountIs(6),
+    stopWhen: stepCountIs(4),
   });
 
   return result.toUIMessageStreamResponse();

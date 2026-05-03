@@ -42,7 +42,7 @@ export default function Home() {
           {/* Left padding on mobile so the hamburger button doesn't collide with the logo */}
           <div className="flex items-center gap-0.5 ml-9 md:ml-0">
             <span className="text-accent font-bold text-lg">motion</span>
-            <span className="text-text-primary font-normal text-lg">sports</span>
+            <span className="text-accent font-normal text-lg">sports</span>
           </div>
           <span className="text-[11px] font-mono text-text-muted bg-bg-card px-2 py-0.5 rounded-full border border-border">
             Prototype

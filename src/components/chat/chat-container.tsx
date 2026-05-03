@@ -53,10 +53,6 @@ export function ChatContainer({
     }
   }, [messages, onMessagesChange]);
 
-  const handleSuggestionClick = (text: string) => {
-    sendMessage({ text });
-  };
-
   // Show typing indicator when submitted but no assistant content yet
   const showTyping =
     status === "submitted" ||
@@ -72,7 +68,7 @@ export function ChatContainer({
       <div className="flex-1 overflow-y-auto">
         <div className="max-w-[720px] mx-auto px-4 py-4">
           {!hasStarted ? (
-            <WelcomeScreen onSuggestionClick={handleSuggestionClick} />
+            <WelcomeScreen />
           ) : (
             <>
               {messages.map((message) => (
